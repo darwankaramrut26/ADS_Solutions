@@ -3,3 +3,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
+.page-content {
+    display: none;
+}
+
+.page-content.active {
+    display: block;
+}
