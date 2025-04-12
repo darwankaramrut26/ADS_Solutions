@@ -92,5 +92,5 @@ toggleButton.addEventListener("click", () => {
 });
 
 document.getElementById("themeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-  });
+  document.body.classList.toggle("dark");
+});
