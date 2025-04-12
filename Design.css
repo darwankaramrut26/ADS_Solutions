@@ -1,12 +1,133 @@
-/* Example custom CSS overrides */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Theme base styles */
+body.light {
+    background-color: #ffffff;
+    color: #1a202c;
   }
   
-.page-content {
+  body.dark {
+    background-color: #1a202c;
+    color: #f9f9f9;
+  }
+  
+  body.dark header,
+  body.dark footer,
+  body.dark section {
+    background-color: #2d3748;
+    color: #f9f9f9;
+  }
+  
+  body.light header,
+  body.light footer,
+  body.light section {
+    background-color: #ffffff;
+    color: #1a202c;
+  }
+  
+  /* Page content visibility toggle */
+  .page-content {
     display: none;
-}
-
-.page-content.active {
+  }
+  
+  .page-content.active {
     display: block;
-}
+  }
+  
+  /* Inputs and textareas - consistent in both themes */
+  input,
+  textarea {
+    background-color: #3b1e2a;
+    color: rgb(68, 183, 60);
+    border: 1px solid #475569;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #eeb227;
+  }
+  
+  /* Success message */
+  .success-message {
+    display: none;
+    color: #4ade80;
+    text-align: center;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    background-color: transparent;
+    color: #4f46e5;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    border: 1px solid #4f46e5;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  /* When the body is in light mode (light bg), make textboxes dark */
+  body.light input,
+  body.light textarea {
+    background-color: #2d3748; /* dark background */
+    color: #edf2f7;            /* light text */
+    border: 1px solid #4a5568;
+  }
+  
+  body.light input:focus,
+  body.light textarea:focus {
+    border-color: #90cdf4;
+    box-shadow: 0 0 0 2px rgba(144, 205, 244, 0.3);
+  }
+  
+  /* When the body is in dark mode (dark bg), make textboxes light */
+  body.dark input,
+  body.dark textarea {
+    background-color: #f7fafc; /* light background */
+    color: #1a202c;            /* dark text */
+    border: 1px solid #cbd5e0;
+  }
+  
+  body.dark input:focus,
+  body.dark textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  }
+  
+  /* Common styling */
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  /* Custom styles for dark mode content */
+  body.dark #aboutSection {
+    background-color: #2d3748;
+    color: #f9f9f9;
+  }
+  
+  body.dark #aboutText {
+    color: #f9f9f9;
+  }
+  
+  /* Custom styles for light mode content */
+  body.light #aboutSection {
+    background-color: #ffffff;
+    color: #1a202c;
+  }
+  
+  body.light #aboutText {
+    color: #1a202c;
+  }
+  
+
+  

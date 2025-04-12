@@ -4,28 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ADEnterprises - IT Solutions for Web Applications</title>
+    <title>ADSolutions - IT Solutions for Web Applications</title>
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2797/2797385.png" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Design.css">
     <script defer src="program.js"></script>
-    <style>
-        .page-content {
-            display: none;
-        }
-
-        .page-content.active {
-            display: block;
-        }
-    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
-
-    <header class="bg-white shadow-md sticky top-0 z-50">
+<body>
+    <header class="shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
             <a href="#" class="flex items-center">
                 <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" class="w-10 h-10" alt="logo">
-                <span class="ml-3 text-2xl font-bold text-indigo-600">ADEnterprises</span>
+                <span class="ml-3 text-2xl font-bold text-indigo-600">ADSolutions</span>
             </a>
             <nav id="navLinks" class="hidden md:flex space-x-6 mt-4 md:mt-0">
                 <a class="hover:text-indigo-600 font-medium" href="#" onclick="showPage('hero')">Home</a>
@@ -33,67 +24,92 @@
                 <a class="hover:text-indigo-600 font-medium" href="#" onclick="showPage('servicesPage')">Services</a>
                 <a class="hover:text-indigo-600 font-medium" href="#" onclick="showPage('contactPage')">Contact</a>
             </nav>
-            <button class="md:hidden block text-indigo-600" onclick="toggleNav()">☰</button>
-            <button onclick="getStarted()"
-                class="hidden md:inline-flex items-center bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">
-                Get Started
-                <svg fill="none" stroke="currentColor" class="w-4 h-4 ml-2" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </button>
+            <div class="flex space-x-2 items-center">
+                <button class="md:hidden block text-indigo-600" onclick="toggleNav()">☰</button>
+                <button id="themeToggle" class="theme-toggle">Toggle Theme</button>
+            </div>
         </div>
     </header>
 
-    <section id="hero" class="text-gray-600 body-font page-content active">
+    <section id="hero" class="body-font page-content active">
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                 <img id="heroImage" class="object-cover object-center rounded shadow-lg" alt="hero">
             </div>
             <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                <h1 class="text-4xl mb-4 font-bold text-gray-900">ADEnterprises - IT Solutions for Web Applications</h1>
-                <p class="mb-8 leading-relaxed text-gray-700">
+                <h1 class="text-4xl mb-4 font-bold">ADSolutions - IT Solutions for Web Applications</h1>
+                <p class="mb-8 leading-relaxed">
                     We specialize in developing responsive and scalable web applications tailored for businesses of all
                     sizes. Whether it's an enterprise dashboard, automation system, CRM, or custom business tools — we
                     turn your ideas into interactive platforms.
                 </p>
                 <div class="flex justify-center">
-                    <button class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-6 rounded text-lg"
-                        onclick="getStarted()">Explore Solutions</button>
-                    <button class="ml-4 text-indigo-600 bg-gray-100 hover:bg-gray-200 py-2 px-6 rounded text-lg">Learn
-                        More</button>
+                    <button class="text-white bg-indigo-600 hover:bg-indigo-700 py-2 px-6 rounded text-lg" onclick="getStarted()">Explore Solutions</button>
+                    <button class="ml-4 text-indigo-600 bg-gray-100 hover:bg-gray-200 py-2 px-6 rounded text-lg">Learn More</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="aboutPage" class="py-12 page-content">
+    <section id="aboutPage" class="py-16 bg-gray-100 page-content">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl font-semibold mb-4 text-indigo-600">About Us</h2>
-            <p class="text-gray-700 max-w-2xl mx-auto">
-                ADEnterprises is committed to delivering top-notch IT solutions to accelerate digital transformation. Our mission is to build secure, fast, and scalable web applications using modern technologies like JavaScript, Python, Node.js, React, and more.
-            </p>
-        </div>
-                    <div class="mt-8 text-center text-gray-700">
-                <p><strong>Email:</strong> Amrutdarwankar97@gmail.com</p>
-                <p><strong>Phone:</strong> +91-8975860883</p>
-                <p><strong>Address:</strong> Tilak Ward, Shivaji Chowk, Warora - 442907</p>
+            <h2 class="text-4xl font-bold text-indigo-700 mb-6">About Us</h2>
+        
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <!-- Image section -->
+                <div class="w-full md:w-1/2">
+                    <img src="images.jpg" alt="ADSolutions Team" class="rounded-2xl shadow-lg mx-auto max-h-96 object-cover">
+                </div>
+        
+                <!-- Text content -->
+                <div class="w-full md:w-1/2 text-left">
+                    <p class="text-lg text-theme mb-4">
+                        <strong>ADSolutions</strong> was founded with a vision to revolutionize the digital landscape by delivering innovative and scalable IT solutions. Since our inception in 2018, we've consistently empowered businesses to transform digitally through cutting-edge technologies and client-centric development practices.
+                    </p>
+                    <p class="text-theme mb-4">
+                        Our team of passionate developers and designers are experts in technologies like <strong>JavaScript, Python, Node.js, React</strong>, and more. From startups to enterprises, we help our clients build secure, fast, and scalable web applications tailored to their needs.
+                    </p>
+                    <p class="text-theme mb-4">
+                        Our commitment to quality, transparency, and continuous innovation drives everything we do. At ADSolutions, we believe in creating long-term partnerships and adding real value to our clients’ digital journeys.
+                    </p>
+        
+                    <!-- Contact Info -->
+                    <div class="mt-6 bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-semibold text-indigo-600 mb-4">Contact Us</h3>
+                        <p class="text-gray-700 mb-2">
+                            <strong>Email:</strong>
+                            <a href="mailto:ads748196@gmail.com" class="text-indigo-500 hover:underline">ads748196@gmail.com</a>
+                        </p>
+                        <p class="text-gray-700 mb-2">
+                            <strong>Phone:</strong>
+                            <a href="tel:+917558305223" class="text-indigo-500 hover:underline">+91 75583 05223</a>
+                        </p>
+                        <p class="text-gray-700">
+                            <strong>Address:</strong><br>
+                            ADSolutions<br>
+                            Phase 1, Hinjewadi, Near Shinde Vasti,<br>
+                            Marunji, Pune - 411057, Maharashtra, India
+                        </p>
+                    </div>
+                </div>
             </div>
+        </div>
     </section>
+    
 
-    <section id="servicesPage" class="py-12 bg-gray-100 page-content">
+    <section id="servicesPage" class="py-12 page-content">
         <div class="container mx-auto px-4">
             <h2 class="text-2xl font-semibold mb-8 text-center text-indigo-600">Our Services</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-2">Custom Web Applications</h3>
                     <p>Design and development of scalable apps tailored to business workflows and user needs.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-2">Automation Tools</h3>
                     <p>Automate repetitive tasks using scripts and bots to improve efficiency and accuracy.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-2">API Integration</h3>
                     <p>Seamless integration of third-party APIs into your existing platforms and apps.</p>
                 </div>
@@ -101,32 +117,30 @@
         </div>
     </section>
 
-    <section id="contactPage" class="bg-white py-10 page-content">
+    <section id="contactPage" class="py-10 page-content">
         <div class="container mx-auto max-w-xl">
             <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">Contact Us</h2>
             <form id="contactForm" onsubmit="return submitForm(event)" class="space-y-4">
-                <input id="name" type="text" placeholder="Your Name" class="w-full border p-2 rounded" required>
-                <input id="address" type="text" placeholder="Your Address" class="w-full border p-2 rounded" required>
-                <input id="contactNo" type="tel" placeholder="Contact Number" class="w-full border p-2 rounded" required>
-                <input id="city" type="text" placeholder="City" class="w-full border p-2 rounded" required>
-                <input id="pinCode" type="text" placeholder="Pin Code" class="w-full border p-2 rounded" required>
-                <input id="occupation" type="text" placeholder="Occupation" class="w-full border p-2 rounded" required>
-                <input id="companyName" type="text" placeholder="Company Name" class="w-full border p-2 rounded">
-                <input id="email" type="email" placeholder="Your Email" class="w-full border p-2 rounded" required>
-                <textarea id="message" placeholder="Your Message" class="w-full border p-2 rounded"></textarea>
+                <input id="name" type="text" placeholder="Your Name" class="w-full" required>
+                <input id="address" type="text" placeholder="Your Address" class="w-full" required>
+                <input id="contactNo" type="tel" placeholder="Contact Number" class="w-full" required>
+                <input id="city" type="text" placeholder="City" class="w-full" required>
+                <input id="pinCode" type="text" placeholder="Pin Code" class="w-full" required>
+                <input id="occupation" type="text" placeholder="Occupation" class="w-full" required>
+                <input id="companyName" type="text" placeholder="Company Name" class="w-full">
+                <input id="email" type="email" placeholder="Your Email" class="w-full" required>
+                <textarea id="message" placeholder="Your Message" class="w-full"></textarea>
                 <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700">Submit</button>
             </form>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-gray-200 mt-10">
+    <footer class="border-t mt-10">
         <div class="container mx-auto py-6 px-5 flex flex-wrap flex-col sm:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm text-center sm:text-left">
-                © <span id="year"></span> ADEnterprises — <a href="#" class="text-indigo-600 ml-1">@adenterprises</a>
+            <p class="text-sm text-center sm:text-left">
+                © <span id="year"></span> ADSolutions — <a href="#" class="text-indigo-600 ml-1">@adsolutions</a>
             </p>
         </div>
     </footer>
-    <script defer src="program.js"></script>
 </body>
-
 </html>

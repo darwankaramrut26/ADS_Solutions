@@ -1,27 +1,8 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
-function getStarted() {
-    alert("Get Started button clicked!");
-}
-
-function toggleNav() {
-    var navLinks = document.getElementById("navLinks");
-    navLinks.classList.toggle("hidden");
-}
-
 document.getElementById('heroImage').src = "https://dummyimage.com/720x600/000/fff";
 
-function showPage(pageId) {
-    const pages = document.querySelectorAll('.page-content');
-    pages.forEach(page => page.classList.remove('active'));
-
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) {
-        targetPage.classList.add('active');
-    }
-}
-
-  //Image 
+  //Images
   const images = [
     "https://img.freepik.com/free-vector/programmers-working-flat-style_23-2148203320.jpg",
     "https://img.freepik.com/free-vector/software-development-team-concept_23-2148819604.jpg",
@@ -33,130 +14,79 @@ function showPage(pageId) {
   const randomIndex = Math.floor(Math.random() * images.length);
   const heroImage = document.getElementById('heroImage');
   heroImage.src = images[randomIndex];
+  function showPage(pageId) {
+    document.querySelectorAll('.page-content').forEach(page => {
+      page.classList.remove('active');
+    });
+    document.getElementById(pageId).classList.add('active');
+  }
+  
+  function toggleNav() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("hidden");
+  }
+  
+  function getStarted() {
+    alert("Thanks for getting started with ADEnterprises!");
+  }
+  
+  function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you for contacting us. We'll get back to you soon!");
+    return false;
+  }
 
+function toggleTheme() {
+  const body = document.body;
+  const toggleButton = document.getElementById("themeToggle");
 
-  //contact
-  function validateForm() {
-    let name = document.getElementById('name').value;
-    let email = document.getElementById('email').value;
-    let message = document.getElementById('message').value;
+  // Toggle classes
+  const isLight = body.classList.contains("light");
 
-    if (name === "" || email === "" || message === "") {
-        alert("Please fill in all fields");
-        return false;
-    }
+  if (isLight) {
+    body.classList.remove("light");
+    body.classList.add("dark");
+    toggleButton.textContent = "☀️ Light Mode";
+  } else {
+    body.classList.remove("dark");
+    body.classList.add("light");
+    toggleButton.textContent = "🌙 Dark Mode";
+  }
 
-    // Basic email validation (you can improve this)
-    if (!email.includes('@')) {
-        alert("Invalid email format");
-        return false;
-    }
-
-    // You can add more complex validation here
-
-    // If all validation passes, you can submit the form (or handle it with AJAX)
-    alert("Form submitted successfully!"); // Replace with your actual submission logic
-    return true;
+  // Store preference
+  localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
 }
 
-function loadAbout() {
-    fetch('about.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('pageContainer').innerHTML = html;
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-            document.getElementById('pageContainer').innerHTML = '<p>Failed to load About content.</p>';
-        });
-}
+// Set default theme and bind event
+document.addEventListener("DOMContentLoaded", () => {
+  // Year update
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-function loadServices() {
-    fetch('services.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('pageContainer').innerHTML = html;
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-            document.getElementById('pageContainer').innerHTML = '<p>Failed to load Services content.</p>';
-        });
-}
+  // Default theme from local storage
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.body.classList.add(savedTheme);
 
-function loadContact() {
-    fetch('contact.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(html => {
-            document.getElementById('pageContainer').innerHTML = html;
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-            document.getElementById('pageContainer').innerHTML = '<p>Failed to load Contact content.</p>';
-        });
-}
+  const toggleButton = document.getElementById("themeToggle");
+  if (toggleButton) {
+    toggleButton.textContent =
+      savedTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
 
+    // ✅ Bind the click event here!
+    toggleButton.addEventListener("click", toggleTheme);
+  }
 
-function showPage(pageId) {
-    const pages = document.querySelectorAll('.page-content');
-    pages.forEach(page => page.classList.remove('active'));
+  // Default image
+  const heroImage = document.getElementById("heroImage");
+  if (heroImage) {
+    heroImage.src = "https://images.unsplash.com/photo-1498050108023-c5249f4df085";
+  }
+})
 
-    const targetPage = document.getElementById(pageId);
-    if (targetPage) {
-        targetPage.classList.add('active');
-    }
-}
+const toggleButton = document.getElementById("themeToggle");
 
-//submit
-function submitForm(event) {
-  event.preventDefault();
-
-  const formData = {
-      name: document.getElementById('name').value,
-      address: document.getElementById('address').value,
-      contactNo: document.getElementById('contactNo').value,
-      city: document.getElementById('city').value,
-      pinCode: document.getElementById('pinCode').value,
-      occupation: document.getElementById('occupation').value,
-      companyName: document.getElementById('companyName').value,
-      email: document.getElementById('email').value,
-      message: document.getElementById('message').value
-  };
-
-  fetch('/send-email', { // Use the server endpoint
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.success) {
-          alert('Form submitted successfully!');
-          document.getElementById('contactForm').reset();
-      } else {
-          alert('Error submitting form. Please try again.');
-      }
-  })
-  .catch(error => {
-      console.error('Error:', error);
-      alert('Error submitting form. Please try again.');
-  });
-
-  return false;
-}
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+});
