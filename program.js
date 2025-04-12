@@ -90,3 +90,7 @@ const toggleButton = document.getElementById("themeToggle");
 toggleButton.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
+
+document.getElementById("themeToggle").addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+  });

@@ -99,41 +99,70 @@
 
     <section id="servicesPage" class="py-12 page-content">
         <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-semibold mb-8 text-center text-indigo-600">Our Services</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2">Custom Web Applications</h3>
-                    <p>Design and development of scalable apps tailored to business workflows and user needs.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2">Automation Tools</h3>
-                    <p>Automate repetitive tasks using scripts and bots to improve efficiency and accuracy.</p>
-                </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2">API Integration</h3>
-                    <p>Seamless integration of third-party APIs into your existing platforms and apps.</p>
-                </div>
+          <h2 class="text-2xl font-semibold mb-8 text-center text-indigo-600">Our Services</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-2 text-theme">Custom Web Applications</h3>
+              <p class="text-theme">Design and development of scalable apps tailored to business workflows and user needs.</p>
             </div>
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-2 text-theme">Automation Tools</h3>
+              <p class="text-theme">Automate repetitive tasks using scripts and bots to improve efficiency and accuracy.</p>
+            </div>
+            <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow">
+              <h3 class="text-xl font-semibold mb-2 text-theme">API Integration</h3>
+              <p class="text-theme">Seamless integration of third-party APIs into your existing platforms and apps.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+      
 
-    <section id="contactPage" class="py-10 page-content">
-        <div class="container mx-auto max-w-xl">
-            <h2 class="text-2xl font-semibold mb-4 text-center text-indigo-600">Contact Us</h2>
-            <form id="contactForm" onsubmit="return submitForm(event)" class="space-y-4">
-                <input id="name" type="text" placeholder="Your Name" class="w-full" required>
-                <input id="address" type="text" placeholder="Your Address" class="w-full" required>
-                <input id="contactNo" type="tel" placeholder="Contact Number" class="w-full" required>
-                <input id="city" type="text" placeholder="City" class="w-full" required>
-                <input id="pinCode" type="text" placeholder="Pin Code" class="w-full" required>
-                <input id="occupation" type="text" placeholder="Occupation" class="w-full" required>
-                <input id="companyName" type="text" placeholder="Company Name" class="w-full">
-                <input id="email" type="email" placeholder="Your Email" class="w-full" required>
-                <textarea id="message" placeholder="Your Message" class="w-full"></textarea>
-                <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700">Submit</button>
+      <section id="contactPage" class="py-16 bg-gray-100 page-content">
+        <div class="container mx-auto max-w-2xl px-4">
+          <div class="bg-gray-200 rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-6 text-center text-indigo-700">Get in Touch</h2>
+            <form id="contactForm" onsubmit="return submitForm(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <div>
+                <label for="name" class="block mb-1 text-gray-800 font-medium">Name</label>
+                <input id="name" type="text" placeholder="John Doe" class="form-input w-full" required>
+              </div>
+      
+              <div>
+                <label for="address" class="block mb-1 text-gray-800 font-medium">Address</label>
+                <input id="address" type="text" placeholder="123 Main St" class="form-input w-full" required>
+              </div>
+      
+              <div>
+                <label for="contactNo" class="block mb-1 text-gray-800 font-medium">Contact No.</label>
+                <input id="contactNo" type="tel" placeholder="+91 9876543210" class="form-input w-full" required>
+              </div>
+      
+              <div>
+                <label for="city" class="block mb-1 text-gray-800 font-medium">City</label>
+                <input id="city" type="text" placeholder="Pune" class="form-input w-full" required>
+              </div>
+      
+              <div>
+                <label for="pinCode" class="block mb-1 text-gray-800 font-medium">Pin Code</label>
+                <input id="pinCode" type="text" placeholder="411057" class="form-input w-full" required>
+              </div>
+      
+              <div>
+                <label for="email" class="block mb-1 text-gray-800 font-medium">Email</label>
+                <input id="email" type="email" placeholder="example@mail.com" class="form-input w-full" required>
+              </div>
+      
+              <div class="sm:col-span-2 text-center">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition duration-300">
+                  Submit
+                </button>
+              </div>
             </form>
+          </div>
         </div>
-    </section>
+      </section>
 
     <footer class="border-t mt-10">
         <div class="container mx-auto py-6 px-5 flex flex-wrap flex-col sm:flex-row justify-between items-center">
